@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "web-ppt"
+version = "1.0.0"
+description = "JSON to PPTX converter with GUI - for web AI users"
+requires-python = ">=3.9"
+dependencies = [
+    "Pillow>=9.0",
+    "PySimpleGUI>=4.60",
+]
+
+[project.optional-dependencies]
+svg = ["cairosvg>=2.5"]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+web-ppt = "pppt.gui:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
